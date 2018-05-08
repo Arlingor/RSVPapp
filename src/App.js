@@ -1,26 +1,64 @@
 import React, { Component } from 'react';
 import './App.css';
+import GuestList from './GuestList';
 
 class App extends Component {
 
   state = {
-    guest: [
+    guests: [
       {
-        name:'Treasure',
-        isConfirmed: false
+        name: 'Treasure',
+        isConfirmed: false,
+        isEditing: false
       },
       {
-        name:'Iskren',
-        isConfirmed: true
+        name: 'Nic',
+        isConfirmed: true,
+        isEditing: false
+      },
+      {
+        name: 'Matt K',
+        isConfirmed: false,
+        isEditing: true
       }
-
     ]
-  }
+  };
 
-  getTotalInvited = () => this.state.guest.length;
+  toggleGuestPropertyAt = (property, indexToChange) =>
+    this.setState({
+      guests: this.state.guests.map((guest, index) => {
+        if (index === indexToChange) {
+          return {
+            ...guest,
+            [property]: !guest[property]
+          };
+        }
+        return guest;
+      })
+    });
+
+  toggleConfirmationAt = index =>
+    this.toggleGuestPropertyAt("isConfirmed", index);
+
+  toggleEditingAt = index =>
+    this.toggleGuestPropertyAt("isEditing", index);
+
+    setNameAt = (name, indexToChange) =>
+    this.setState({
+      guests: this.state.guests.map((guest, index) => {
+        if (index === indexToChange) {
+          return {
+            ...guest,
+            name
+          };
+        }
+        return guest;
+      })
+    });
+
+  getTotalInvited = () => this.state.guests.length;
   // getAttendingGuests = () =>
-  //getUnconfirmedGust = () =>
-
+  // getUnconfirmedGuests = () =>
 
   render() {
     return (
@@ -56,31 +94,14 @@ class App extends Component {
               </tr>
             </tbody>
           </table>
-          <ul>
-            <li className="pending"><span>Safia</span></li>
-            <li className="responded"><span>Iver</span>
-              <label>
-                <input type="checkbox" checked /> Confirmed
-              </label>
-              <button>edit</button>
-              <button>remove</button>
-            </li>
-            <li className="responded"><span>Corrina</span>
-              <label>
-                <input type="checkbox" checked /> Confirmed
-              </label>
-              <button>edit</button>
-              <button>remove</button>
-            </li>
-            <li>
-              <span>Joel</span>
-              <label>
-                <input type="checkbox" /> Confirmed
-              </label>
-              <button>edit</button>
-              <button>remove</button>
-            </li>
-          </ul>
+
+          <GuestList
+            guests={this.state.guests}
+            toggleConfirmationAt={this.toggleConfirmationAt}
+            toggleEditingAt={this.toggleEditingAt}
+            setNameAt = {this.setNameAt}
+          />
+
         </div>
       </div>
     );
