@@ -77,7 +77,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1>RSVP</h1>
+          <h1>Guest Portal</h1>
           
           <form>
             <input type="text" value="Safia" placeholder="Invite Someone" />
