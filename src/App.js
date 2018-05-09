@@ -70,10 +70,12 @@ class App extends Component {
       <div className="App">
         <header>
           <h1>RSVP</h1>
+          
           <form>
             <input type="text" value="Safia" placeholder="Invite Someone" />
             <button type="submit" name="submit" value="submit">Submit</button>
           </form>
+        
         </header>
         <div className="main">
           <div>
