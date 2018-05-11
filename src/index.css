@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  color: #e65656;
+  color: #a31414d2;
   background: #3f3f3f;
 }
 
@@ -96,7 +96,7 @@ button {
 header {
   text-align: center;
   background: linear-gradient(90deg, #d4eece, #55b3d0, #1e7eb7),
-    url(./images/header-bg.jpg) no-repeat;
+    url(https://cdn.getyourguide.com/img/location_img-59-1224772867-148.jpg) no-repeat;
   background-blend-mode: multiply;
   background-size: cover;
 }
