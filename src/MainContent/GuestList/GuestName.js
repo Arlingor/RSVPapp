@@ -7,8 +7,7 @@ const GuestName = props => {
       <input
         type="text"
         value={props.children}
-        onChange={props.handleNameEdits}
-      />
+        onChange={props.handleNameEdits} />
     );
   }
 
