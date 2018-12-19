@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+//This component is responsible for checking which guest confirmed the reservation and wich doesn't
+// using 2 props toggleFilter and isFiltered
 const ConfirmedFilter = props =>
   <div>
     <h2>Invitees</h2>

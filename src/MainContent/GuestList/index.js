@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import Guest from './Guest';
 import PendingGuest from './PendingGuest';
 
+//This component is for the Guest lists, it has 2 children PendingGuest and Guest
+
 const GuestList = props =>
   <ul>
     <PendingGuest name={props.pendingGuest} />

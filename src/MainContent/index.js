@@ -5,6 +5,7 @@ import ConfirmedFilter from "./ConfirmedFilter";
 import GuestList from "./GuestList";
 import Counter from "./Counter";
 
+// This component is responsible for the main features of the app - Counter, GuestList and Confirmed Filter 
 const MainContent = props =>
   <div className="main">
     <ConfirmedFilter
@@ -26,6 +27,7 @@ const MainContent = props =>
     />
   </div>;
 
+// Using propTypes to reduce the errors while passing all props
 MainContent.propTypes = {
   toggleFilter: PropTypes.func.isRequired,
   isFiltered: PropTypes.bool.isRequired,

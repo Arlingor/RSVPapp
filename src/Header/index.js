@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 import GuestInputForm from './GuestInputForm';
 
+// Stateless component for managing the Header of the App
+
 const Header = props =>
   <header>
     <h1>RSVP</h1>
-    <p>A Treehouse App</p>
     <GuestInputForm
       newGuestSubmitHandler={props.newGuestSubmitHandler}
       pendingGuest={props.pendingGuest}
@@ -14,6 +15,7 @@ const Header = props =>
     />
   </header>;
 
+// Using propTypes to reduce the errors while passing all props
 Header.propTypes = {
   newGuestSubmitHandler: PropTypes.func.isRequired,
   pendingGuest: PropTypes.string.isRequired,

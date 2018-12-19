@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import GuestName from './GuestName';
-
 const Guest = props =>
   <li>
     <GuestName
@@ -21,7 +20,7 @@ const Guest = props =>
     </button>
     <button onClick={props.handleRemove}>remove</button>
   </li>;
-
+  
 Guest.propTypes = {
   name: PropTypes.string.isRequired,
   isConfirmed: PropTypes.bool.isRequired,

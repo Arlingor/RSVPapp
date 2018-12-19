@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+//This component counts how many guests are: Attending, Unconfirmed, Total
 const Counter = props =>
   <table className="counter">
     <tbody>

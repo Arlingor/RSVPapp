@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Header from './Header';
 import MainContent from './MainContent';
 
+//Creating the main class for the App with state  
 class App extends Component {
 
   state = {
@@ -14,11 +14,13 @@ class App extends Component {
 
   lastGuestId = 0;
 
+// Function resonsible for changing id Guest 
   newGuestId = () => {
     const id = this.lastGuestId;
     this.lastGuestId += 1;
     return id;
   };
+
 
   toggleGuestProperty = (property, id) =>
     this.setState({
@@ -56,13 +58,16 @@ class App extends Component {
         return guest;
       })
     });
-
+  
+  //Changing isFiltered to true every time when ConfirmedFilter is checked
   toggleFilter = () =>
     this.setState({ isFiltered: !this.state.isFiltered });
 
   handleNameInput = e =>
     this.setState({ pendingGuest: e.target.value });
-
+    
+  //------------------
+    // Changing the state every time when Submit button is clicked, taking the id from newGuestId func
   newGuestSubmitHandler = e => {
     e.preventDefault();
     const id = this.newGuestId();
@@ -80,8 +85,10 @@ class App extends Component {
     });
   }
 
+  // Finding total Guests by checking how many guests are in guests array
   getTotalInvited = () => this.state.guests.length;
 
+  // Logic for the guests who confirmed the reservation 
   getAttendingGuests = () =>
     this.state.guests.reduce(
       (total, guest) => guest.isConfirmed ? total + 1 : total,
@@ -89,6 +96,7 @@ class App extends Component {
     );
 
   render() {
+    // The Logic behind the Counter component
     const totalInvited = this.getTotalInvited();
     const numberAttending = this.getAttendingGuests();
     const numberUnconfirmed = totalInvited - numberAttending;
