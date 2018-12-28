@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import GuestName from './GuestName';
+//This component is for managing the gusts it has one child component GuestName
 const Guest = props =>
   <li>
     <GuestName
